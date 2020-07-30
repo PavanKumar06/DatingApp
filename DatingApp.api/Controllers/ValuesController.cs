@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.api.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]// Attribute based routing  when we specify a route inside our controller class. Then this is what's going to be mapped as our endpoint so that when we navigate or make a request to this particular controller then our application knows where to route that particular request
     [ApiController]
     public class ValuesController : ControllerBase
@@ -27,6 +29,7 @@ namespace DatingApp.API.Controllers
             return Ok(values);
         }
 
+        [AllowAnonymous]
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)// We get this parameter from the route

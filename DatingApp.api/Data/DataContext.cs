@@ -7,5 +7,6 @@ namespace DatingApp.api.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) {}
         public DbSet<Value> Values { get; set; }// the name that we specify here is used to represent the table name that gets created what we scaffold our database
+         public DbSet<User> Users { get; set; }    
     }
 }
