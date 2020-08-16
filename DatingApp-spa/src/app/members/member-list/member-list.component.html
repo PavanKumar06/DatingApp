@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <div class="row">
+    <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
+      <app-member-card [user]="user"></app-member-card>
+      <!-- We need to pass our user as our input property, that we're using inside the member card component.
+      The way we do this is to add user in square brackets which represents our input property
+      and then we assign this user to that input properties  -->
+    </div>
+  </div>
+</div>
